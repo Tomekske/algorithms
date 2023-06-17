@@ -10,11 +10,23 @@ class Stack {
       return null;
     }
 
-    int poppedItem = _stack.last;
-    _stack.removeLast();
+    return _stack.removeLast();
+  }
 
-    return poppedItem;
+  int? peek() {
+    if (_stack.isEmpty) {
+      return null;
+    }
+
+    return _stack.last;
+  }
+
+  void clear() {
+    while (_stack.isNotEmpty) {
+      _stack.removeLast();
+    }
   }
 
   List get stack => _stack;
+  int get size => _stack.length;
 }
